@@ -1,0 +1,14 @@
+Dotenet ef creating the app
+
+// creating api project
+$ dotne new sln
+$ dotnet new webapi -o API
+$ dotnet sln add API/
+
+// creating angular app
+$ ng new client
+
+// adding bootstrap to angular app
+$ cd client
+$ ng add ngx-bootsrap
+$ npm install font-awesome
