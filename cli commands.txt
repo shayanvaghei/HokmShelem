@@ -12,3 +12,8 @@ $ ng new client
 $ cd client
 $ ng add ngx-bootsrap
 $ npm install font-awesome
+
+// droping data base
+$ cd API
+$ dotnet ef database drop    ===  drop-databse  in console
+$ dotnet ef database update  === update-database in cosole
