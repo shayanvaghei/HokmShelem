@@ -17,3 +17,21 @@ $ npm install font-awesome
 $ cd API
 $ dotnet ef database drop    ===  drop-databse  in console
 $ dotnet ef database update  === update-database in cosole
+
+// adding toastr to angular
+$ cd client
+$ npm install ngx-toastr
+
+// creating guards
+$ cd client/src/app/_guards
+$ ng g guard auth --skip-tests
+
+// adding bootswatch
+$ cd client
+$ npm install bootswatch
+
+// creating service
+$ ng g s account --skip-tests
+
+// creating module
+$ ng g m shared --flat

@@ -1,0 +1,18 @@
+
+header {
+    font-family: "Noto Serif", serif;
+}
+
+header img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.navbar {
+    border-radius: 10px;
+}
+
+.container {
+    max-width: 100%;
+}

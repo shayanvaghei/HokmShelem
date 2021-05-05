@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { User } from './shared/models/user';
+import { AccountService } from './_services/account.service';
 
 @Component({
   selector: 'app-root',
@@ -10,17 +12,17 @@ export class AppComponent implements OnInit{
   title = 'HokmShelem';
   users: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private accountSevice: AccountService) {}
 
   ngOnInit() {
-    this.getUsers();
+    this.setCurrentUser();
   }
 
-  getUsers() {
-    this.http.get('https://localhost:5001/api/users').subscribe(response => {
-      this.users = response;
-    }, error => {
-      console.log(error);
-    });
+  setCurrentUser() {
+    // importing current user from local storage
+    // since we have stringify user in our local storage, then we need to JSON parse it
+    const user: User = JSON.parse(localStorage.getItem('user'));
+    // setting current user into service
+    this.accountSevice.setCurrentUser(user);
   }
 }

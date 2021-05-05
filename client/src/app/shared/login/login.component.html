@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="login mt-5">
+        <form #loginForm="ngForm" autocomplete="off" (ngSubmit)="login()">
+            <div>
+                <label>Email</label>
+                <input name="username" [(ngModel)]="model.username" class="text-input" />
+            </div>
+            <div>
+                <label>Password</label>
+                <input name="password" [(ngModel)]="model.password" class="text-input" type="password" />
+            </div>
+            <div>
+                <input type="checkbox"/>&nbsp;
+                <label>Remember me</label>
+            </div>
+            <button type="submit" class="primary-btn">Sign In</button>
+        </form>
+        <div class="row text-center text-white-50">
+            Sign in with
+        </div>
+        <!-- <form id="external-account" method="post" class="">
+            <div class="row mt-3">
+                <button type="submit" class="btn btn-outline-info col-6">
+                    <i class="fab fa-google">&nbsp;Google</i>
+                </button>
+                <button type="submit" class="btn btn-outline-info col-6">
+                    <i class="fab fa-facebook"></i> Facebook
+                </button>
+            </div>
+        </form> -->
+        <div class="links">
+            <a id="forgot-password" href="#">Forgot your password?</a>
+        </div>
+        <div class="or">
+            <hr class="bar" />
+            <span>OR</span>
+            <hr class="bar" />
+        </div>
+        <a class="secondary-btn" href="#">Create an account</a>
+    </div>
+</div>

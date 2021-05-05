@@ -1,0 +1,91 @@
+.homePage {
+    margin: 10px 5px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-gap: 0.5em;
+    position: relative;
+    font-family: "Noto Serif", serif;
+    font-size: 1.1rem;
+}
+
+    .homePage > div:nth-child(1) {
+        padding: 1em;
+        border-radius: 10px;
+    }
+
+    .homePage > div:nth-child(2) {
+        padding: 1em;
+        border-radius: 10px;
+        line-height: 1.2em;
+        display: flex;
+        flex-direction: column;
+    }
+        /*homepage Image*/
+        .homePage > div:nth-child(2) > div:nth-child(1) {
+            flex: 1;
+            border-radius: 10px;
+            margin-top: 1px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+            /* play cards form FREE*/
+            .homePage > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+                flex: 1;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                font-size: 1.5rem;
+            }
+
+                .homePage > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) p {
+                    margin: auto;
+                }
+
+            /*Online Users*/
+            .homePage > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+                flex: 1;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+                .homePage > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) div {
+                    margin: auto;
+                }
+
+        /*Play Online Button*/
+        .homePage > div:nth-child(2) > div:nth-child(2) {
+            flex: 1;
+            border-radius: 10px;
+            margin-top: 1px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .homePage > div:nth-child(2) > div:nth-child(2) a {
+                margin: auto;
+                padding: 0.7rem 1rem;
+                height: 2.7rem;
+                display: block;
+                border: 0;
+                border-radius: 5px;
+                font-weight: 500;
+                font-size: 2rem;
+                background: #4c5969;
+                color: #fff;
+                text-decoration: none;
+                cursor: pointer;
+                text-align: center;
+                width: 100%;
+                height: 80px;
+                box-shadow: 0px 2px #9bb5d4;
+                font-family: "Lobster", cursive;
+                transition: all 0.5s;
+            }
+
+                .homePage > div:nth-child(2) > div:nth-child(2) a:hover {
+                    background-color: #788ba3;
+                }

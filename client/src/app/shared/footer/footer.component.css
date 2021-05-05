@@ -1,0 +1,12 @@
+footer {
+    font-family: "Noto Serif", serif;
+}
+
+a {
+    color: #110f3d;
+}
+
+    a:hover {
+        text-decoration: none;
+        color: #d1891e;
+    }

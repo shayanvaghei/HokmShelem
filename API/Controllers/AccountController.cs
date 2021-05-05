@@ -24,6 +24,12 @@ namespace API.Controllers
             _tokenService = tokenService;
         }
 
+        [HttpGet("getCountries")]
+        public ActionResult<IEnumerable<string>> GetCountries()
+        {
+            return SD.GetCountriesName();
+        }
+
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
