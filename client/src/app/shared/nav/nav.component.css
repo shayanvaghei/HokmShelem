@@ -16,3 +16,7 @@ header img {
 .container {
     max-width: 100%;
 }
+
+.dropdown-toggle, .dropdown-item {
+    cursor: pointer;
+}

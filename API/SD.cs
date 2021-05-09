@@ -9,7 +9,8 @@ namespace API
     {
         public static List<string> GetCountriesName()
         {
-            return new List<string>() { "Afghanistan",
+            return new List<string>() {
+                                        "Afghanistan",
                                         "Albania",
                                         "Algeria",
                                         "Andorra",

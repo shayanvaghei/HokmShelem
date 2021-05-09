@@ -12,6 +12,8 @@ $ ng new client
 $ cd client
 $ ng add ngx-bootsrap
 $ npm install font-awesome
+or
+$ ng add @fortawesome/angular-fontawesome
 
 // droping data base
 $ cd API
@@ -35,3 +37,6 @@ $ ng g s account --skip-tests
 
 // creating module
 $ ng g m shared --flat
+
+// creating interceptor
+$ ng g interceptor error

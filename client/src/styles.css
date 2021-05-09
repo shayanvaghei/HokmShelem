@@ -6,3 +6,101 @@
     max-width: 90%;
     margin: auto;
 }
+
+
+.login {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding-bottom: 1rem;
+    margin-top: 30px;
+    font-family: "Noto Serif", serif;
+}
+
+.login form {
+    width: 80%;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.login label {
+    font-size: 0.9rem;
+    line-height: 2rem;
+    font-weight: 500;
+    color: #a6a2a0;
+}
+
+.login .text-input {
+    margin-bottom: 1.3rem;
+    width: 100%;
+    border-radius: 5px;
+    background: #181818;
+    border: 1px solid #555;
+    color: white;
+    padding: 0.5rem 1rem;
+    line-height: 1.3rem;
+}
+
+.login .primary-btn {
+    width: 100%;
+}
+
+.login .secondary-btn, .or, .links {
+    width: 60%;
+}
+
+.login .links a, .login a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.login .links a:hover, .login a:hover {
+    color: #d1891e;
+}
+
+.or {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.or .bar {
+    flex: auto;
+    border: none;
+    height: 1px;
+    background: #aaa;
+}
+
+.or span {
+    color: #ccc;
+    padding: 0 0.8rem;
+}
+
+.primary-btn {
+    padding: 0.7rem 1rem;
+    height: 2.7rem;
+    display: block;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 500;
+    background: #f96816;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.primary-btn:hover {
+    background-color: #ffa264;
+}
+
+.fontFormat {
+    font-family: "Noto Serif", serif;
+}

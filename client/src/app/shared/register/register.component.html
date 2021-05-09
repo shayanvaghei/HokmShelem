@@ -1,1 +1,52 @@
-<p>register works!</p>
+<div class="container">
+    <div class="row text-center fontFormat pt-4">
+        <h4 class="text-success" style="margin:auto">Join <span class="text-danger">NOW</span> to play for <span class="text-danger">FREE</span> and have fun!</h4>
+    </div>
+    <div class="login">
+        <form #registerForm="ngForm" (ngSubmit)="register()">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div>
+                <label>Name</label>
+                <input class="text-input" name="name" [(ngModel)]="model.name" />
+            </div>
+            <div>
+                <label>Email</label>
+                <input class="text-input" name="email" [(ngModel)]="model.email" />
+            </div>
+            <div>
+                <label>Password</label>
+                <input class="text-input" type="password" name="password" [(ngModel)]="model.password" />
+            </div>
+            <div>
+                <label>Confirm password</label>
+                <input  class="text-input" type="password" name="confirmPassword" [(ngModel)]="model.confirmPassword"/>
+            </div>
+            <div class="form-group">
+                <label >Select Country</label>
+                <select class="form-control" name="country" [(ngModel)]="model.country" value="sdds">
+                    <option *ngFor="let country of countries" [value]="country">
+                        {{country}}
+                    </option>
+                </select>
+            </div>
+            <button type="submit" class="primary-btn">Create FREE account</button>
+        </form>
+        <div class="or">
+            <hr class="bar" />
+            <span>OR sign up using</span>
+            <hr class="bar" />
+        </div>
+
+        <form>
+            <div class="row mt-3">
+                <button type="submit" class="btn btn-outline-info col-6">
+                    <i class="fab fa-google">&nbsp;Google</i>
+                </button>
+                <button type="submit" class="btn btn-outline-info col-6">
+                    <i class="fab fa-facebook"></i> Facebook
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

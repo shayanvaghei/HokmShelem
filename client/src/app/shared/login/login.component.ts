@@ -14,13 +14,17 @@ export class LoginComponent implements OnInit {
   constructor(private accountService: AccountService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    if (this.accountService.currentUser$ != null) {
-      this.router.navigateByUrl('/');
-    }
+    this.accountService.currentUser$.subscribe(user => {
+      if (user != null) {
+        // if user is already logged in and try to access login page then navigate back to the home page
+        this.router.navigateByUrl('/');
+      }
+    }, error => {
+      console.log(error);
+    });
   }
 
   login() {
-    console.log(this.model);
     this.accountService.login(this.model).subscribe(response => {
       this.router.navigateByUrl('/');
     }, error => {
