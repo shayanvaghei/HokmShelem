@@ -1,26 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API.Entities
+namespace API.DTOs
 {
-    public class AppUser
+    public class MemberDto
     {
         public int Id { get; set; }
         public string UserName { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
-        [Required]
-        [StringLength(15)]
+        // this is going to be main photo to be sent back to the user (this is not included into AppUser class)
+        public string PhotoUrl { get; set; }
+        // automapper is going to magically execute GetAge function from the source to populate value into Age
+        public int Age { get; set; }
         public string Name { get; set; }
-        public DateTime Created { get; set; } = DateTime.Now;
-        public DateTime LastActive { get; set; } = DateTime.Now;
-        [StringLength(40)]
+        public DateTime Created { get; set; }
+        public DateTime LastActive { get; set; } 
         public string Country { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        [StringLength(500)]
         public string AboutMe { get; set; }
         public string Badge { get; set; }
         public int HokmScore { get; set; } = 0;
@@ -30,7 +26,6 @@ namespace API.Entities
         public int GameLeft { get; set; } = 0;
         public int Views { get; set; } = 0;
         public int TournomentWon { get; set; } = 0;
-        public int GamesAbandoned{ get; set; } = 0;
-        public ICollection<Photo> Photos { get; set; }
+        public int GamesAbandoned { get; set; } = 0;
     }
 }
