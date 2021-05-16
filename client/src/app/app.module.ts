@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { LobbyComponent } from './game/lobby/lobby.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { UserModule } from './areas/user/user.module';
 
 @NgModule({
   declarations: [
@@ -26,12 +28,14 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    UserModule
   ],
   // we need add our own interceptors into providers
   providers: [
     // we use multi we want to add our own interceptor to the existing angular interceptor ones
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

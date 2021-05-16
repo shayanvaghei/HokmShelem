@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
-import { User } from '../shared/models/user';
+import { User } from '../_models/user';
 import {map} from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl =  environment.apiUrl;
   // is an observable to store our user in
   private currentUserSource = new ReplaySubject<User>(1); // 1 is the size of our buffer, how many users do we want to store
   currentUser$ = this.currentUserSource.asObservable();
@@ -22,7 +23,7 @@ export class AccountService {
         const user = response;
         // to check if we have a user at this time
         if (user) {
-          localStorage.setItem('user', JSON.stringify(user));
+          localStorage.setItem('hokmShelemUser', JSON.stringify(user));
           // in addition to add the user into local storage, we are adding it to observable as well
           this.currentUserSource.next(user); // like adding value to link list
         }
@@ -37,7 +38,7 @@ export class AccountService {
     return this.http.post(this.baseUrl + 'account/register', model).pipe(
       map((user: User) => {
         if (user) {
-          localStorage.setItem('user', JSON.stringify(user));
+          localStorage.setItem('hokmShelemUser', JSON.stringify(user));
           this.setCurrentUser(user);
         }
       })
@@ -51,7 +52,7 @@ export class AccountService {
 
   logout() {
     // removing user form storage
-    localStorage.removeItem('user');
+    localStorage.removeItem('hokmShelemUser');
     // removing user from the list
     this.currentUserSource.next(null);
   }

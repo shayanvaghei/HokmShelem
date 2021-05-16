@@ -1,5 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('hokmShelemUser'))?.token
+  })
+}
 
 @Component({
   selector: 'app-error-generate',
@@ -7,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./error-generate.component.css']
 })
 export class ErrorGenerateComponent implements OnInit {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.apiUrl;
   validationErrors: string[] = [];
 
   constructor(private http: HttpClient) { }

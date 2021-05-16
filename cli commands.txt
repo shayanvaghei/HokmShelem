@@ -40,3 +40,6 @@ $ ng g m shared --flat
 
 // creating interceptor
 $ ng g interceptor error
+
+// installing ngx gallery
+$ npm install @kolkov/ngx-gallery
