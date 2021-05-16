@@ -27,5 +27,8 @@ namespace API.DTOs
         public int Views { get; set; } = 0;
         public int TournomentWon { get; set; } = 0;
         public int GamesAbandoned { get; set; } = 0;
+        public string Status { get; set; }
+        // one user can have many photos
+        public ICollection<PhotoDto> Photos { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using API.DTOs;
 using API.Entities;
 using API.Services.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -64,6 +65,9 @@ namespace API.Controllers
 
             if (user == null) return Unauthorized("Invalid username");
 
+            user.Status = SD.UserStatus_Online;
+            await _context.SaveChangesAsync();
+
             using var hmac = new HMACSHA512(user.PasswordSalt);
 
             var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
@@ -83,6 +87,23 @@ namespace API.Controllers
         private async Task<bool> UserExists(string username)
         {
             return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
+        }
+
+        [Authorize]
+        [HttpPost("logout")]
+        public async Task<ActionResult<LogoutDto>> Logout(LogoutDto logoutDto)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName.ToLower() == logoutDto.Username.ToLower());
+            if (user == null) 
+                return BadRequest("Not logged in!");
+
+            user.Status = SD.UserStatus_Offline;
+            await _context.SaveChangesAsync();
+
+            return new LogoutDto
+            {
+                Username = user.UserName
+            };
         }
     }
 }

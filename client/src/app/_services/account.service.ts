@@ -2,19 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import { User } from '../_models/user';
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl =  environment.apiUrl;
+  baseUrl = environment.apiUrl;
   // is an observable to store our user in
   private currentUserSource = new ReplaySubject<User>(1); // 1 is the size of our buffer, how many users do we want to store
   currentUser$ = this.currentUserSource.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   login(model: any) {
     return this.http.post(this.baseUrl + 'account/login', model).pipe(
@@ -43,18 +44,30 @@ export class AccountService {
         }
       })
     );
-  } 
+  }
 
   // setting current user
   setCurrentUser(user: User) {
     this.currentUserSource.next(user);
   }
 
-  logout() {
-    // removing user form storage
-    localStorage.removeItem('hokmShelemUser');
-    // removing user from the list
-    this.currentUserSource.next(null);
+  logout(user: string) {
+    const logout = {
+      username: user
+    }
+
+    this.http.post(this.baseUrl + 'account/logout', logout).subscribe(response => {
+      if (response) {
+        // removing user form storage
+        localStorage.removeItem('hokmShelemUser');
+        // removing user from the list
+        this.currentUserSource.next(null);
+        this.toastr.success('User has been sucessully logged out!')
+
+      }
+    }, error => {
+      console.log(error);
+    });
   }
 
 

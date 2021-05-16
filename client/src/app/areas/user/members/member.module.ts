@@ -4,6 +4,8 @@ import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { MemberCardComponent } from './member-card/member-card.component';
 import { MembersComponent } from './members.component';
 import { MemberRoutingModule } from './member-routing.module';
+import {TabsModule} from 'ngx-bootstrap/tabs';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 
 
@@ -11,11 +13,17 @@ import { MemberRoutingModule } from './member-routing.module';
   declarations: [
     MemberDetailComponent,
     MemberCardComponent,
-    MembersComponent
+    MembersComponent,
   ],
   imports: [
     CommonModule,
-    MemberRoutingModule
+    MemberRoutingModule,
+    TabsModule,
+    NgxGalleryModule
   ],
+  exports: [
+    TabsModule,
+    NgxGalleryModule
+  ]
 })
 export class MemberModule { }

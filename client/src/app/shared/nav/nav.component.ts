@@ -9,7 +9,7 @@ import { AccountService } from 'src/app/_services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  model: any = {}
+  model: any = {};
   collapsed = true;
 
   constructor(public accountService: AccountService, private router: Router, private roastr: ToastrService) { }
@@ -22,8 +22,8 @@ export class NavComponent implements OnInit {
     this.collapsed = !this.collapsed;
   }
 
-  logout() {
-    this.accountService.logout();
+  logout(username: string) {
+    this.accountService.logout(username);
     this.router.navigateByUrl('/'); // users will be redirected to home page after logout
   }
 }

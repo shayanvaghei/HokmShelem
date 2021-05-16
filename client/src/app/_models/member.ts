@@ -19,5 +19,6 @@ export interface Member {
     views: string;
     tournomentWon: string;
     gamesAbandoned: string;
+    status: string;
     photos: Photo[];
 }

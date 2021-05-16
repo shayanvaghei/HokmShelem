@@ -35,7 +35,7 @@ namespace API.Data.Repository
             // since we dont want to include extra elements such as password hash and password salt in our select statement
 
             return await _context.Users
-                .Where(x => x.UserName == username)
+                .Where(x => x.UserName == username.ToLower())
                 // we project to MemberDto
                 // with ConfigurationProvider it is going to get the configuration we provided in our AutoMapperProfiles class
                 .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
@@ -57,7 +57,7 @@ namespace API.Data.Repository
 
         public async Task<AppUser> GetUserByUsername(string username)
         {
-            return await _context.Users.Include(p => p.Photos).SingleOrDefaultAsync(x => x.UserName == username);
+            return await _context.Users.Include(p => p.Photos).SingleOrDefaultAsync(x => x.UserName.ToLower() == username.ToLower());
         }
 
         public async Task<IEnumerable<AppUser>> GetUsersAsync()

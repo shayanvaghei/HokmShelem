@@ -104,3 +104,8 @@
 .fontFormat {
     font-family: "Noto Serif", serif;
 }
+
+.country-image {
+    width: 100px;
+    height: 50px;
+}

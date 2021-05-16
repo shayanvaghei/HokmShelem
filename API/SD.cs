@@ -7,6 +7,49 @@ namespace API
 {
     public static class SD
     {
+        public const string Role_Admin = "Admin";
+        public const string Role_AssignedAdmin = "AssignedAdmin";
+        public const string Role_User = "User";
+
+
+        public const string UserStatus_Online = "Online";
+        public const string UserStatus_Offline = "Offline";
+        public const string UserStatus_InGame = "In Game";
+        public const string UserStatus_Banned = "Banned";
+
+        public const string PlayerColorBlue = "Blue";
+        public const string PlayerColorRed = "Red";
+
+
+        public const string GameTypeHokm = "Hokm";
+        public const string GameTypeShelem = "Shelem";
+
+
+        // Badge rules: (Upon game won)
+        // Starts by Brown = 0
+        // 10 - 50 - 100 - 200 - 500 - 1000 - 1500 - 2000 - 3000
+        // Pink = 0 - 9
+        // Purple   = 10   -   49
+        // Red      = 50   -   99
+        // Green    = 100  -  199
+        // Brown    = 200  -  499
+        // Blue     = 500  - 1000
+        // Grey     = 1000 - 1499
+        // Black    = 1500 - 1999
+        // Diamond  = 2000 - 2999
+        // Gold     = 3000 - ela mashala
+        public const string BadgePink = "Pink";
+        public const string BadgePurple = "Purple";
+        public const string BadgeRed = "Red";
+        public const string BadgeGreen = "Green";
+        public const string BadgeBrown = "Brown";
+        public const string BadgeBlue = "Blue";
+        public const string BadgeGrey = "Grey";
+        public const string BadgeBlack = "Black";
+        public const string BadgeDiamond = "Diamond";
+        public const string BadgeGold = "Gold";
+
+
         public static List<string> GetCountriesName()
         {
             return new List<string>() {

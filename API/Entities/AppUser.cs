@@ -31,6 +31,7 @@ namespace API.Entities
         public int Views { get; set; } = 0;
         public int TournomentWon { get; set; } = 0;
         public int GamesAbandoned{ get; set; } = 0;
+        public string Status { get; set; } = SD.UserStatus_Offline;
         public ICollection<Photo> Photos { get; set; }
     }
 }
