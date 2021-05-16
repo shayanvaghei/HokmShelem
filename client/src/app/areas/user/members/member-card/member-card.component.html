@@ -1,1 +1,98 @@
-<p>{{member.name}}</p>
+<!-- <div class="card mb-3">
+    <h3 class="card-header text-center">Card header</h3>
+    <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.name}}" class="card-img-top">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
+  </div> -->
+
+
+
+<div class="card mb-4">
+    <h3 class="card-header text-center">Card header</h3>
+    <div class="card-img-wrapper">
+        <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.name}}" class="card-img-top">
+        <ul class="list-inline member-icons animate text-center">
+            <li class="list-inline-item">
+                <button routerLink='/members/{{member.username}}' class="btn btn-primary"><i
+                        class="fa fa-user"></i></button>
+            </li>
+            <li class="list-inline-item">
+                <button class="btn btn-primary"><i class="fa fa-heart"></i></button>
+            </li>
+            <li class="list-inline-item">
+                <button class="btn btn-primary"><i class="fa fa-envelope"></i></button>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body p-1">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{member.badge}}</li>
+            <li class="list-group-item">{{member.hokmScore}}</li>
+            <li class="list-group-item">{{member.shelemScore}}</li>
+            <li class="list-group-item text-center"><img class="countryImage" src="/assets/images/countries/{{member.country}}.png"></li>
+        </ul>
+        <!-- <h6 class="card-title text-center mb-1"><i class="fa fa-user mr-2"></i>
+            {{member.name}}
+        </h6>
+        <img class="countryImage" src="/assets/images/countries/{{member.country}}.png"> -->
+    </div>
+    <div class="text-center card-footer text-muted">
+        Last active 2 days ago
+    </div>
+</div>
+<!-- <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="../../../../../assets/images//site/user.png" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!-- <div class="col">
+    <div class="card h-100">
+        <img src="../../../../../assets/images//site/user.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="card mb-4">
+    <div class="card-img-wrapper">
+        <img src="" alt="" class="card-img-top">
+        <ul class="list-inline member-icons animate text-center">
+            <li class="list-inline-item">
+                <button routerLink='/members/' class="btn btn-primary"><i class="fa fa-user"></i></button>
+            </li>
+            <li class="list-inline-item">
+                <button class="btn btn-primary"><i class="fa fa-heart"></i></button>
+            </li>
+            <li class="list-inline-item">
+                <button class="btn btn-primary"><i class="fa fa-envelope"></i></button>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body p-1">
+        <h6 class="card-title text-center mb-1"><i class="fa fa-user mr-2"></i>
+
+        </h6>
+        <p class="card-text text-muted text-center"></p>
+    </div>
+</div> -->

@@ -9,17 +9,21 @@ import { ErrorGenerateComponent } from './errors/error-generate/error-generate.c
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { NotFoundPageComponent } from './errors/not-found-page/not-found-page.component';
+import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    LoginComponent,
-    RegisterComponent,
     ErrorGenerateComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    LoginComponent,
+    NavComponent,
+    FooterComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
@@ -28,11 +32,15 @@ import { RouterModule } from '@angular/router';
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
     }),
-    FormsModule
+    FormsModule,
   ],
   exports: [
     BsDropdownModule,
-    ToastrModule
+    ToastrModule,
+    LoginComponent,
+    NavComponent,
+    FooterComponent,
+    RegisterComponent,
   ]
 })
 export class SharedModule { }

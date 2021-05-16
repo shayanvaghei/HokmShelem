@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MemberDetailComponent } from './areas/user/members/member-detail/member-detail.component';
-import { MemberListComponent } from './areas/user/members/member-list/member-list.component';
 import { LobbyComponent } from './game/lobby/lobby.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorGenerateComponent } from './shared/errors/error-generate/error-generate.component';
@@ -22,8 +20,8 @@ const routes: Routes = [
     canActivate: [AuthGuard], // implementing AuthGuard component
     children: [
       {path: 'lobby', component: LobbyComponent},
-      {path: 'members', component: MemberListComponent},
-      {path: 'members/:username', component: MemberDetailComponent},
+      // it is going to be activated and loaded when we access member path
+      {path: 'members', loadChildren: () => import('./areas/user/members/member.module').then(mod => mod.MemberModule)}, 
     ]
   },
   {path: 'errors', component: ErrorGenerateComponent},

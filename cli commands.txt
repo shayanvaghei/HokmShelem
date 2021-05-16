@@ -43,3 +43,6 @@ $ ng g interceptor error
 
 // installing ngx gallery
 $ npm install @kolkov/ngx-gallery
+
+// preparing angular project up and running form github
+$ npm install angular-cli-ghpages 
