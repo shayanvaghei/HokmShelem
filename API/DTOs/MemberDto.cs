@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -31,4 +32,13 @@ namespace API.DTOs
         // one user can have many photos
         public ICollection<PhotoDto> Photos { get; set; }
     }
+
+    public class UserUpdateDto
+    {
+        [StringLength(500)]
+        public string AboutMe { get; set; }
+        [StringLength(40)]
+        public string Country { get; set; }
+    }
+
 }

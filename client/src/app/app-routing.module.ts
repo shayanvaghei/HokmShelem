@@ -11,23 +11,25 @@ import { RegisterComponent } from './shared/register/register.component';
 import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent}, // when we say empty string, when somebody browses to localhost:4200 this component will be loaded
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  { path: '', component: HomeComponent }, // when we say empty string, when somebody browses to localhost:4200 this component will be loaded
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: '', // default pass
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard], // implementing AuthGuard component
     children: [
-      {path: 'lobby', component: LobbyComponent},
+      { path: 'lobby', component: LobbyComponent },
       // it is going to be activated and loaded when we access member path
-      {path: 'members', loadChildren: () => import('./areas/user/members/member.module').then(mod => mod.MemberModule)}, 
+      { path: 'members', loadChildren: () => import('./areas/user/members/member.module').then(mod => mod.MemberModule) },
+      { path: 'user-profile', loadChildren: () => import('./areas/user/user-profile/user.module').then(mod => mod.UserModule) },
+     
     ]
   },
-  {path: 'errors', component: ErrorGenerateComponent},
-  {path: 'not-found', component: NotFoundComponent},
-  {path: 'server-error', component: ServerErrorComponent},
-  {path: '**', component: NotFoundPageComponent, pathMatch: 'full'}, // this wild card root as user types in that something does not match any of the specified routes
+  { path: 'errors', component: ErrorGenerateComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: 'server-error', component: ServerErrorComponent },
+  { path: '**', component: NotFoundPageComponent, pathMatch: 'full' }, // this wild card root as user types in that something does not match any of the specified routes
 ];
 
 @NgModule({

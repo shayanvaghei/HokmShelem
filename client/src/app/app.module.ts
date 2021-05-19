@@ -10,13 +10,12 @@ import { SharedModule } from './shared/shared.module';
 import { LobbyComponent } from './game/lobby/lobby.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
-import { MemberModule } from './areas/user/members/member.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LobbyComponent
+    LobbyComponent,
   ],
   imports: [
     BrowserModule,

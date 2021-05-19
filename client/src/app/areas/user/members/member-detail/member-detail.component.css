@@ -13,3 +13,11 @@
     background-color: #fff;
     border-top: none;
 }
+
+@media (max-width: 992px) {
+    
+    .second {
+        /* display: none; */
+        margin-top: 2rem;
+    }
+}

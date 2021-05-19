@@ -6,7 +6,6 @@ import { MembersComponent } from './members.component';
 
 const routes: Routes = [
   { path: '', component: MembersComponent },
-  //{ path: ':username', component: MemberDetailComponent },
   { path: ':username', component: MemberDetailComponent },
 ];
 
