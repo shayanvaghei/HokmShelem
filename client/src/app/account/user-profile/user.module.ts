@@ -18,7 +18,9 @@ import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.
     TabsModule
   ],
   exports: [
-    TabsModule
+    TabsModule,
+    UserProfileEditComponent,
+    UserProfileComponent
   ]
 })
 export class UserModule { }

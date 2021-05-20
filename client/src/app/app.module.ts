@@ -4,26 +4,26 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { LobbyComponent } from './game/lobby/lobby.component';
-import { ErrorInterceptor } from './_interceptors/error.interceptor';
-import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { ErrorInterceptor } from './core/_interceptors/error.interceptor';
+import { JwtInterceptor } from './core/_interceptors/jwt.interceptor';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     LobbyComponent,
   ],
   imports: [
     BrowserModule,
+    SharedModule,
+    CoreModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    SharedModule
   ],
   // we need add our own interceptors into providers
   providers: [

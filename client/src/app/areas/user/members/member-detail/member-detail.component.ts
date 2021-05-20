@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
-import { Member } from 'src/app/_models/member';
+import { Member } from 'src/app/shared/_models/member';
 import { MemberService } from '../member.service';
 
 @Component({

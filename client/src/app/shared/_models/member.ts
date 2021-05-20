@@ -11,14 +11,14 @@ export interface Member {
     country: string;
     aboutMe: string;
     badge: string;
-    hokmScore: string;
-    shelemScore: string;
-    gameWon: string;
-    gameLost: string;
-    gameLeft: string;
-    views: string;
-    tournomentWon: string;
-    gamesAbandoned: string;
+    hokmScore: number;
+    shelemScore: number;
+    gameWon: number;
+    gameLost: number;
+    gameLeft: number;
+    views: number;
+    tournomentWon: number;
+    gamesAbandoned: number;
     status: string;
     photos: Photo[];
 }

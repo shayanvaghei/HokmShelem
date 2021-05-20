@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { take } from 'rxjs/operators';
-import { Member } from 'src/app/_models/member';
-import { User } from 'src/app/_models/user';
-import { AccountService } from 'src/app/_services/account.service';
-import { MemberService } from '../members/member.service';
+import { Member } from 'src/app/shared/_models/member';
+import { User } from 'src/app/shared/_models/user';
+import { AccountService } from 'src/app/account/account.service';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -15,7 +15,7 @@ export class UserProfileComponent implements OnInit {
   member: Member;
   user: User;
 
-  constructor(private memberService: MemberService, private accountService: AccountService,
+  constructor(private userService: UserService, private accountService: AccountService,
     private toastr: ToastrService) {
     // we need to get current user
     // now our user is current user
@@ -23,12 +23,14 @@ export class UserProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadMember();
+    this.loadUser();
+    
   }
 
-  loadMember() {
-    this.memberService.getMember(this.user.username).subscribe(member => {
+  loadUser() {
+    this.userService.getUserProfile(this.user.username).subscribe(member => {
       this.member = member;
-    })
+      //console.log(this.member);
+    });
   }
 }

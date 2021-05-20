@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary box-shadow mb-3">
         <div class="container">
-            <a class="navbar-brand" routerLink="/"><img src="../../../assets/images/site/logo.png">HokmShelem</a>
+            <a class="navbar-brand" routerLink="/"><img src="./assets/images/site/logo.png">HokmShelem</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                 (click)="toggleCollapsed()">
@@ -11,10 +11,10 @@
                 
                 <ul class="navbar-nav" *ngIf="(accountService.currentUser$ | async) === null" >
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/register">Register</a>
+                        <a class="nav-link" routerLink="/account/register">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink='/login'>Login</a>
+                        <a class="nav-link" routerLink='/account/login'>Login</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav" >

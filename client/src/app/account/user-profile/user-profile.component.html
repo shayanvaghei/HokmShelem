@@ -1,0 +1,94 @@
+<div class="wrapper" *ngIf="member">
+    <div class="row">
+        <div class="col-lg-4 col-sm-12">
+            <div class="card">
+                <img src="{{member.photoUrl || './assets/user.png'}}" class="card-img-top img-thumbnail"
+                    alt="{{member.name}}">
+                <div class="card-body">
+                    <div>
+                        <strong class="text-muted">Status:</strong>
+                        <p [ngClass]="{'text-success': playerIsOnline, 'text-muted': !playerIsOnline}"
+                            style="font-size: 1.5rem; font-weight: bold;">{{member.status}}</p>
+                    </div>
+                    <div>
+                        <strong class="text-muted">Member since:</strong>
+                        <p>{{member.created}}</p>
+                    </div>
+                    <div>
+                        <strong class="text-muted">Last Active:</strong>
+                        <p>{{member.lastActive}}</p>
+                    </div>
+                    <div>
+                        <strong class="text-muted">Country</strong>
+                        <p>{{member.country}}<img class="country-image mt-2 ml-2"
+                                src="/assets/images/countries/{{member.country}}.png" alt="{{member.country}}"></p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group d-flex">
+                        <button class="btn btn-outline-info btn-block"><i class="fas fa-edit mr-2"></i> Edit profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="second col-lg-8 col-sm-12">
+            <tabset class="member-tabset">
+                <tab heading='About {{member.name}}'>
+                    <!-- <h4 class="mt-3">Description</h4>
+                    <p>{{member.aboutMe}}</p> -->
+                    <app-member-scores></app-member-scores>
+                </tab>
+                <tab heading='Photos'>
+                    Photos
+                </tab>
+                <tab heading='Friends'>
+                    <p>Firends</p>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="wrapper" *ngIf="member">
+    <div class="row">
+        <div class="col-8">
+            <tabset class="member-tabset">
+                <tab heading='About {{member.name}}'>
+                    <h4>Description</h4>
+                    <p>{{member.aboutMe}}</p>
+                </tab>
+                <tab heading='Interests'>
+                    <h4>Interests</h4>
+                    <p>{{member.country}}</p>
+                </tab>
+                <tab heading='Photos'>
+                    <p>Photo</p>
+                </tab>
+                <tab heading='Messages'>
+                    <p>Messages here</p>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</div> -->
+
+       <!-- <tabset class="member-tabset">
+                <tab heading='About {{member.name}}'>
+                    <form>
+                        <h4 class="mt-3">About me</h4>
+                        <textarea [(ngModel)]="member.aboutMe" name="aboutMe" rows="6"></textarea>
+                        <h4 class="mt-3">Country</h4>
+                        <div class="form-inline">
+                            <label for="city">Country: </label>
+                            <input [(ngModel)]="member.country" type="text" name="country" class="form-control mx-2">
+                        </div>
+                    </form>
+                </tab>
+                <tab heading='Photos'>
+                    <p>Photos here</p>
+                </tab>
+                <tab heading='Friends'>
+                    <p>Firends</p>
+                </tab>
+            </tabset> -->
