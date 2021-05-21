@@ -10,6 +10,7 @@ import { LoginComponent } from '../account/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from '../account/register/register.component';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
       positionClass: 'toast-bottom-right'
     }),
     FormsModule,
+    NgxSpinnerModule
   ],
   exports: [
     FooterComponent,
@@ -39,6 +41,7 @@ import { ToastrModule } from 'ngx-toastr';
     RegisterComponent,
     BsDropdownModule,
     ToastrModule,
+    NgxSpinnerModule
   ]
 })
 export class CoreModule { }

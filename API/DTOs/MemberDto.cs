@@ -9,7 +9,7 @@ namespace API.DTOs
     public class MemberDto
     {
         public int Id { get; set; }
-        public string UserName { get; set; }
+        public string Username { get; set; }
         // this is going to be main photo to be sent back to the user (this is not included into AppUser class)
         public string PhotoUrl { get; set; }
         // automapper is going to magically execute GetAge function from the source to populate value into Age
@@ -20,25 +20,18 @@ namespace API.DTOs
         public string Country { get; set; }
         public string AboutMe { get; set; }
         public string Badge { get; set; }
-        public int HokmScore { get; set; } = 0;
-        public int ShelemScore { get; set; } = 0;
-        public int GameWon { get; set; } = 0;
-        public int GameLost { get; set; } = 0;
-        public int GameLeft { get; set; } = 0;
+        public int HokmScore { get; set; }
+        public int ShelemScore { get; set; }
+        public int GamesWon { get; set; }
+        public int GamesLost { get; set; }
+        public int GamesAbandoned { get; set; }
+        public int TournomenstWon { get; set; }
         public int Views { get; set; } = 0;
-        public int TournomentWon { get; set; } = 0;
-        public int GamesAbandoned { get; set; } = 0;
         public string Status { get; set; }
         // one user can have many photos
         public ICollection<PhotoDto> Photos { get; set; }
     }
 
-    public class UserUpdateDto
-    {
-        [StringLength(500)]
-        public string AboutMe { get; set; }
-        [StringLength(40)]
-        public string Country { get; set; }
-    }
+   
 
 }

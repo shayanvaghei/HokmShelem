@@ -28,26 +28,26 @@ namespace API
         // Badge rules: (Upon game won)
         // Starts by Brown = 0
         // 10 - 50 - 100 - 200 - 500 - 1000 - 1500 - 2000 - 3000
-        // Pink = 0 - 9
-        // Purple   = 10   -   49
-        // Red      = 50   -   99
-        // Green    = 100  -  199
-        // Brown    = 200  -  499
-        // Blue     = 500  - 1000
-        // Grey     = 1000 - 1499
-        // Black    = 1500 - 1999
-        // Diamond  = 2000 - 2999
-        // Gold     = 3000 - ela mashala
-        public const string BadgePink = "Pink";
-        public const string BadgePurple = "Purple";
-        public const string BadgeRed = "Red";
-        public const string BadgeGreen = "Green";
-        public const string BadgeBrown = "Brown";
-        public const string BadgeBlue = "Blue";
-        public const string BadgeGrey = "Grey";
-        public const string BadgeBlack = "Black";
-        public const string BadgeDiamond = "Diamond";
-        public const string BadgeGold = "Gold";
+        // pink = 0 - 9
+        // purple   = 10   -   49
+        // red      = 50   -   99
+        // green    = 100  -  199
+        // brown    = 200  -  499
+        // blue     = 500  - 1000
+        // grey     = 1000 - 1499
+        // orange    = 1500 - 1999
+        // diamond  = 2000 - 2999
+        // gold     = 3000 - ela mashala
+        public const string BadgePink = "pink";
+        public const string BadgePurple = "purple";
+        public const string BadgeRed = "red";
+        public const string BadgeGreen = "green";
+        public const string BadgeBrown = "brown";
+        public const string BadgeBlue = "blue";
+        public const string BadgeGrey = "grey";
+        public const string BadgeOrange = "orange";
+        public const string BadgeDiamond = "diamond";
+        public const string BadgeGold = "gold";
 
 
         public static List<string> GetCountriesName()

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PlayerResults} from '../_models/playerResults';
 
 @Component({
   selector: 'app-member-scores',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-scores.component.css']
 })
 export class MemberScoresComponent implements OnInit {
+  @Input() playerResults: PlayerResults;
+  @Input() ok: number;
 
   constructor() { }
 

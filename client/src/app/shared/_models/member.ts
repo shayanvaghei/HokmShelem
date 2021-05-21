@@ -13,12 +13,11 @@ export interface Member {
     badge: string;
     hokmScore: number;
     shelemScore: number;
-    gameWon: number;
-    gameLost: number;
-    gameLeft: number;
-    views: number;
-    tournomentWon: number;
+    gamesWon: number;
+    gamesLost: number;
     gamesAbandoned: number;
+    tournomenstWon: number;
+    views: number;
     status: string;
     photos: Photo[];
 }

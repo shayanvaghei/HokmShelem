@@ -23,8 +23,8 @@
             </div>
             <div class="form-group">
                 <label >Select Country</label>
-                <select class="form-control" name="country" [(ngModel)]="model.country" value="sdds">
-                    <option *ngFor="let country of countries" [value]="country">
+                <select class="form-control" name="country" [(ngModel)]="model.country">
+                    <option *ngFor="let country of countries">
                         {{country}}
                     </option>
                 </select>

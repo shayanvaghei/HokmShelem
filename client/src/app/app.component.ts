@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { User } from './shared/_models/user';
+import { UserToken } from './shared/_models/user';
 import { AccountService } from './account/account.service';
 
 @Component({
@@ -21,7 +20,7 @@ export class AppComponent implements OnInit{
   setCurrentUser() {
     // importing current user from local storage
     // since we have stringify user in our local storage, then we need to JSON parse it
-    const user: User = JSON.parse(localStorage.getItem('hokmShelemUser'));
+    const user: UserToken = JSON.parse(localStorage.getItem('hokmShelemUser'));
     // setting current user into service
     this.accountSevice.setCurrentUser(user);
   }

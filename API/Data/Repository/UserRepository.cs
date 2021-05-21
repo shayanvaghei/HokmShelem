@@ -55,9 +55,14 @@ namespace API.Data.Repository
             return await _context.Users.FindAsync(id);
         }
 
-        public async Task<AppUser> GetUserByUsername(string username)
+        public async Task<AppUser> GetUserByUsernameAsync(string username)
         {
             return await _context.Users.Include(p => p.Photos).SingleOrDefaultAsync(x => x.UserName.ToLower() == username.ToLower());
+        }
+
+        public async Task<AppUser> GetUserForUserUpdateAsync(string username)
+        {
+            return await _context.Users.SingleOrDefaultAsync(x => x.UserName.ToLower() == username.ToLower());
         }
 
         public async Task<IEnumerable<AppUser>> GetUsersAsync()
@@ -76,6 +81,18 @@ namespace API.Data.Repository
         {
             // this will add a flag to the entity to indicate that was modified
             _context.Entry(user).State = EntityState.Modified;
+        }
+
+        public async Task<UserUpdateDto> GetUserForUpdate(string username)
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserName.ToLower() == username.ToLower());
+            return (user == null) ? null : _mapper.Map<UserUpdateDto>(user);
+        }
+
+
+        public async Task<bool> NameExistsAsync(string newName)
+        {
+            return await _context.Users.AnyAsync(x => x.Name == newName.ToLower());
         }
     }
 }

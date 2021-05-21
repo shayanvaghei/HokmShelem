@@ -6,6 +6,7 @@ import { MembersComponent } from './members.component';
 import { MemberRoutingModule } from './member-routing.module';
 import {TabsModule} from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -19,7 +20,8 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     CommonModule,
     MemberRoutingModule,
     TabsModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    SharedModule
   ],
   exports: [
     TabsModule,

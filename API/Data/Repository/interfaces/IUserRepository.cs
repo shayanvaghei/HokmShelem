@@ -13,11 +13,16 @@ namespace API.Data.Repository.interfaces
         Task<bool> SaveAllAsync();
         Task<IEnumerable<AppUser>> GetUsersAsync();
         Task<AppUser> GetUserByIdAsync(int id);
-        Task<AppUser> GetUserByUsername(string username);
+        Task<AppUser> GetUserByUsernameAsync(string username);
+
+        Task<AppUser> GetUserForUserUpdateAsync(string username);
 
         // for optimization we create the following two methods
         // instead of returning AppUser we are returning MemberDto
         Task<IEnumerable<MemberDto>> GetMembersAsyc();
         Task<MemberDto> GetMemberAsync(string username);
+        Task<UserUpdateDto> GetUserForUpdate(string username);
+
+        Task<bool> NameExistsAsync(string newName);
     }
 }

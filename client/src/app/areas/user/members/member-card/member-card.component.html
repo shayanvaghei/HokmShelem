@@ -1,21 +1,3 @@
-<!-- <div class="card mb-3">
-    <h3 class="card-header text-center">Card header</h3>
-    <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.name}}" class="card-img-top">
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <div class="card-footer text-muted">
-      2 days ago
-    </div>
-  </div> -->
-
-
-
 <div class="card mb-4">
     <h3 class="card-header text-center">{{member.name}}</h3>
     <div class="card-img-wrapper">
@@ -35,7 +17,9 @@
     </div>
     <div class="card-body p-1">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item text-center"><img class="country-image" src="/assets/images/countries/{{member.country}}.png"></li>
+            <li class="list-group-item text-center">
+                <app-country-image [countryName]="member.country" [width]="150" [height]="70"></app-country-image>
+            </li>
         </ul>
     </div>
     <div class="text-center card-footer text-muted">

@@ -50,4 +50,5 @@ $ npm install
 $ npm install angular-cli-ghpages 
 
 // install loader
+$ ng add ngx-spinner
 $ ng add ngx-ui-loader

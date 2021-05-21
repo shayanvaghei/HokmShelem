@@ -1,1 +1,65 @@
-<p>user-profile-edit works!</p>
+<div *ngIf="userUpdate" class="wrapper">
+    <div class="row">
+        <div class="col-4">
+            <p>
+                <app-header-name [text]="'Edit profile'"></app-header-name>
+            </p>
+        </div>
+        <div class="col-8">
+            <div class="alert alert-info" *ngIf="editForm.dirty">
+                <strong>Information: </strong> You have made changes. Any unsaved changes will be lost
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <h3 class="card-header">
+            Basic Memeber<span class="membershipText"><a href="#" style="font-size:medium;">Membership plans 
+                <i class="fas fa-arrow-circle-right mr-3"></i></a></span>
+        </h3>
+        <ul class="list-group list-group-flush fontFormat">
+            <form #editForm="ngForm" (ngSubmit)="updateUser()">
+                <li class="list-group-item">
+                    <div class="row mt-3">
+                        <label name="name" class="col-3">Name:</label>
+                        <input [(ngModel)]="userUpdate.name" name="name" class="form-control col-4" />
+                    </div>
+                    <div class="row mt-3">
+                        <label class="col-3">Email</label>
+                        <input [(ngModel)]="userUpdate.username" name="username" class="form-control col-4" disabled />
+                    </div>
+                    <div class="row mt-3">
+                        <label class="col-3">Country</label>
+                        <select class="form-control col-4" [(ngModel)]="userUpdate.country" name="country" value="sdds">
+                            <option *ngFor="let country of countries" [value]="country" [selected]="userUpdate.country === country || '-Select your country-'">
+                                {{country}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <a href="#" class="text-white"><i class="fas fa-key pr-2"></i>Password Change</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <a href="#" class="text-white"><i class="fas fa-envelope-square pr-2"></i>Change Email</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <a href="#" class="text-white"><i class="fas fa-user-circle pr-2"></i>Delete Account</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <label class="col-3">About me</label>
+                        <textarea [(ngModel)]="userUpdate.aboutMe" name="aboutMe" rows="6"
+                            class="form-control col-7"></textarea>
+                    </div>
+                    <div class="row mt-3">
+                        <button [disabled]="!editForm.dirty" type="submit" class="btn btn-primary btn-block offset-3 col-3">Save</button>
+                    </div>
+                </li>
+            </form>
+        </ul>
+    </div>
+</div>

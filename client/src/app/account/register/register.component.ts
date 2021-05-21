@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from 'src/app/account/account.service';
-import { SharedServicesService } from '../../shared/shared-services.service';
+import { SharedService } from '../../shared/shared.service';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   model: any = {};
   modelToSend: any = {};
 
-  constructor(private sharedServices: SharedServicesService, private accountService: AccountService,
+  constructor(private sharedService: SharedService, private accountService: AccountService,
      private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
@@ -27,16 +27,7 @@ export class RegisterComponent implements OnInit {
       console.log(error);
     });
     
-    this.getCountries();
-  }
-
-  getCountries() {
-    this.sharedServices.getCountries().subscribe(response => {
-      //console.log(response);
-      this.countries = response;
-    }, error =>{
-      console.log(error);
-    });
+    this.countries = this.sharedService.getCountries();
     console.log(this.countries);
   }
 

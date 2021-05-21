@@ -4,6 +4,8 @@ import { UserProfileComponent } from './user-profile.component';
 import { UserRoutingModule } from './user-routing.module';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +17,9 @@ import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.
   imports: [
     CommonModule,
     UserRoutingModule,
-    TabsModule
+    TabsModule,
+    SharedModule,
+    FormsModule
   ],
   exports: [
     TabsModule,

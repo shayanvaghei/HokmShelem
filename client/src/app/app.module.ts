@@ -10,6 +10,7 @@ import { LobbyComponent } from './game/lobby/lobby.component';
 import { ErrorInterceptor } from './core/_interceptors/error.interceptor';
 import { JwtInterceptor } from './core/_interceptors/jwt.interceptor';
 import { CoreModule } from './core/core.module';
+import { LoadingInterceptor } from './core/_interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CoreModule } from './core/core.module';
   providers: [
     // we use multi we want to add our own interceptor to the existing angular interceptor ones
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},
   ],
   bootstrap: [AppComponent]
 })

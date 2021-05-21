@@ -1,0 +1,10 @@
+.customClass{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3rem;
+}
+
+@media(max-width: 750px) {
+    .customClass {
+        font-size: 1.5rem;
+    }
+}

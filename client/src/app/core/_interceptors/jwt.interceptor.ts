@@ -6,7 +6,7 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../../shared/_models/user';
+import { UserToken } from '../../shared/_models/user';
 import { AccountService } from '../../account/account.service';
 import { take } from 'rxjs/operators';
 
@@ -20,7 +20,7 @@ export class JwtInterceptor implements HttpInterceptor {
   // and that one is an observable
   // in here we need to get that current user outside of that observable
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    let currentUser: User;
+    let currentUser: UserToken;
 
     // we need to subscribe to our observablee and we need to unsubscribe that too
     // we user pipe and take(1)
