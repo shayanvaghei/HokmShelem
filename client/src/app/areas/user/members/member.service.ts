@@ -32,7 +32,7 @@ export class MemberService {
   }
 
   getMember(username: string) {
-    // get a single member form our ayyar member:
+    // get a single member from our array member:
     const member = this.members.find(x => x.username === username);
     // if we do have a member or we have found the member then
     // we return an observable of that member

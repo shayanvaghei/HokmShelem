@@ -16,6 +16,7 @@ export class UserProfileComponent implements OnInit {
   member: Member;
   user: UserToken;
   playerIsOnline: boolean;
+  photoEditMode = false;
 
   constructor(private userService: UserService, private accountService: AccountService,
     private toastr: ToastrService) {
@@ -39,5 +40,9 @@ export class UserProfileComponent implements OnInit {
         this.playerIsOnline = false;
       }
     });
+  }
+
+  photoEditToggle() {
+    this.photoEditMode = !this.photoEditMode;
   }
 }

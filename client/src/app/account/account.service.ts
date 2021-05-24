@@ -24,9 +24,7 @@ export class AccountService {
         const user = response;
         // to check if we have a user at this time
         if (user) {
-          localStorage.setItem('hokmShelemUser', JSON.stringify(user));
-          // in addition to add the user into local storage, we are adding it to observable as well
-          this.currentUserSource.next(user); // like adding value to link list
+          this.setCurrentUser(user);
         }
 
         return user; // to get response while subscribing we need to explicitly return here as well
@@ -39,7 +37,6 @@ export class AccountService {
     return this.http.post(this.baseUrl + 'account/register', model).pipe(
       map((user: UserToken) => {
         if (user) {
-          localStorage.setItem('hokmShelemUser', JSON.stringify(user));
           this.setCurrentUser(user);
         }
       })
@@ -48,7 +45,10 @@ export class AccountService {
 
   // setting current user
   setCurrentUser(user: UserToken) {
-    this.currentUserSource.next(user);
+    // storing the user object into localStorage called hokmShelemUser
+    localStorage.setItem('hokmShelemUser', JSON.stringify(user));
+    // in addition to add the user into local storage, we are adding it to observable as well
+    this.currentUserSource.next(user); // like adding value to link list
   }
 
   logout(user: string) {

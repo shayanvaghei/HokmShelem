@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.ErrorHandling.Middleware;
-using API.StartupExtentions;
+using API.Extentions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

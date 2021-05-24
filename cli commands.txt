@@ -52,3 +52,6 @@ $ npm install angular-cli-ghpages
 // install loader
 $ ng add ngx-spinner
 $ ng add ngx-ui-loader
+
+// install photo upload
+$ npm install ng2-file-upload

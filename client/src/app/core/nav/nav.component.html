@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary box-shadow mb-3">
         <div class="container">
-            <a class="navbar-brand" routerLink="/"><img src="./assets/images/site/logo.png">HokmShelem</a>
+            <a class="navbar-brand" routerLink="/"><img class="logo" src="./assets/images/site/logo.png">HokmShelem</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                 (click)="toggleCollapsed()">
@@ -20,6 +20,7 @@
                 <ul class="navbar-nav" >
                     <li class="nav-item dropdown">
                         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
+                            <img class="profilePic" src="{{user.photoUrl || './assets/images/site/user.png'}}" alt="{{user.username}}">
                             <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.username | titlecase}}</a>
                             <div class="dropdown-menu mt-3" *dropdownMenu>
                                 <a routerLink="/user-profile" class="dropdown-item">My Profile</a>
