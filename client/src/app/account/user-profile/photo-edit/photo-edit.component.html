@@ -14,7 +14,7 @@
             </div>
             <div class="col-6">
                 <button (click)="deletePhoto(photo.id)"
-                    class="btn btn-sm btn-danger btn-block"><i class="fa fa-trash"></i> Delete</button>
+                    class="btn btn-sm btn-danger btn-block"><i class="fas fa-trash"></i> Delete</button>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
         <h3>Add Photos</h3>
         <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropzoneOver}" (fileOver)="fileOverBase($event)"
             [uploader]="uploader" class="card bg-faded p-3 text-center mb-3 my-drop-zone">
-            <i class="fa fa-upload fa-3x"></i>
+            <i class="fas fa-upload fa-3x"></i>
             Drop photos here
         </div>
         <input class="form-control" type="file" ng2FileSelect [uploader]="uploader" multiple /><br />
@@ -57,15 +57,15 @@
             <div class="mt-2 text-center">
                 <button type="button" class="btn btn-success btn-s mr-1" (click)="uploader.uploadAll()"
                     [disabled]="!uploader.getNotUploadedItems().length">
-                    <span class="fa fa-upload"></span> Upload all
+                    <span class="fas fa-upload"></span> Upload all
                 </button>
                 <button type="button" class="btn btn-warning btn-s mr-1" (click)="uploader.cancelAll()"
                     [disabled]="!uploader.isUploading">
-                    <span class="fa fa-ban"></span> Cancel all
+                    <span class="fas fa-ban"></span> Cancel all
                 </button>
                 <button type="button" class="btn btn-danger btn-s" (click)="uploader.clearQueue()"
                     [disabled]="!uploader.queue.length">
-                    <span class="fa fa-trash"></span> Remove all
+                    <span class="fas fa-trash"></span> Remove all
                 </button>
             </div>
         </div>

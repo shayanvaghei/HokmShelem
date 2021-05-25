@@ -1,0 +1,20 @@
+<div class="form-group">
+    <label class="text-light">{{label}}</label>
+    <input [class.is-invalid]='ngControl.touched && ngControl.invalid' class="form-control" type={{type}}
+        [formControl]="ngControl.control" placeholder="{{label}}" />
+    <!-- ?. type of error we are looking for -->
+    <div *ngIf="ngControl.control.errors?.required" class="invalid-feedback">Please enter a
+        {{label}}</div>
+    <div *ngIf="ngControl.control.errors?.pattern" class="invalid-feedback">
+        Please enter a valid {{label}}
+        <div *ngIf="extraInformation">
+            {{extraInformation}}
+        </div>
+    </div>
+    <div *ngIf="ngControl.control.errors?.minlength" class="invalid-feedback">{{label}} must be at least
+        {{ngControl.control.errors.minlength['requiredLength']}} characters</div>
+    <div *ngIf="ngControl.control.errors?.maxlength" class="invalid-feedback">{{label}} must be at most
+        {{ngControl.control.errors.maxlength['requiredLength']}} characters</div>
+    <!-- our custom validation for password check -->
+    <div *ngIf="ngControl.control.errors?.isMatching" class="invalid-feedback">Passwords do not match</div>
+</div>

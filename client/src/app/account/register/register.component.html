@@ -1,35 +1,38 @@
 <div class="container">
     <div class="row text-center fontFormat pt-4">
-        <h4 class="text-success" style="margin:auto">Join <span class="text-danger">NOW</span> to play for <span class="text-danger">FREE</span> and have fun!</h4>
+        <h4 class="text-success" style="margin:auto">Join <span class="text-danger">NOW</span> to play for <span
+                class="text-danger">FREE</span> and have fun!</h4>
     </div>
     <div class="login">
-        <form #registerForm="ngForm" (ngSubmit)="register()">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div>
-                <label>Name</label>
-                <input class="text-input" name="name" [(ngModel)]="model.name" />
-            </div>
-            <div>
-                <label>Email</label>
-                <input class="text-input" name="email" [(ngModel)]="model.email" />
-            </div>
-            <div>
-                <label>Password</label>
-                <input class="text-input" type="password" name="password" [(ngModel)]="model.password" />
-            </div>
-            <div>
-                <label>Confirm password</label>
-                <input  class="text-input" type="password" name="confirmPassword" [(ngModel)]="model.confirmPassword"/>
-            </div>
+        <form [formGroup]='registerForm' (ngSubmit)="registerForm.valid && register()">
+            <app-text-input [formControl]='registerForm.controls["name"]' [label]='"Name"'
+                [extraInformation]='"Name should contains only letters and or numbers"'></app-text-input>
+            <app-text-input [formControl]='registerForm.controls["username"]' [label]='"Email"' [type]='"email"'>
+            </app-text-input>
+            <app-text-input [formControl]='registerForm.controls["password"]' [type]='"password"' [label]='"Password"'>
+            </app-text-input>
+            <app-text-input [formControl]='registerForm.controls["confrimPassword"]' [type]='"password"'
+                [label]='"Confirm Password"'></app-text-input>
+            <app-date-input [formControl]='registerForm.controls["dateOfBirth"]' [label]='"Date of Birth"'>
+            </app-date-input>
             <div class="form-group">
-                <label >Select Country</label>
-                <select class="form-control" name="country" [(ngModel)]="model.country">
+                <label class="text-light">Select Country</label>
+                <select class="form-control" formControlName='country'>
                     <option *ngFor="let country of countries">
                         {{country}}
                     </option>
                 </select>
             </div>
-            <button type="submit" class="primary-btn">Create FREE account</button>
+            <div class="row" *ngIf="validationErrors.length > 0">
+                <ul class="text-danger">
+                    <li *ngFor="let error of validationErrors">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <button  [disabled]='!registerForm.valid' type="submit" class="btn btn-warning btn-block">Create FREE account</button>
+            </div>
         </form>
         <div class="or">
             <hr class="bar" />
@@ -49,4 +52,3 @@
         </form>
     </div>
 </div>
-

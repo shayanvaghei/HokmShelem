@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { take } from 'rxjs/operators';
 import { SharedService } from 'src/app/shared/shared.service';
-import { UserToken, UserUpdate } from 'src/app/shared/_models/user';
+import { UserToken, UserUpdate } from 'src/app/shared/userToken';
 import { AccountService } from '../../account.service';
 import { UserService } from '../user.service';
 

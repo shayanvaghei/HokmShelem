@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { take } from 'rxjs/operators';
-import { Member } from 'src/app/shared/_models/member';
-import { UserToken } from 'src/app/shared/_models/user';
+import { Member } from 'src/app/shared/models/member';
+import { UserToken } from 'src/app/shared/userToken';
 import { AccountService } from 'src/app/account/account.service';
 import { UserService } from './user.service';
 import { Observable } from 'rxjs';

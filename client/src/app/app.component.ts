@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserToken } from './shared/_models/user';
+import { UserToken } from './shared/userToken';
 import { AccountService } from './account/account.service';
 
 @Component({

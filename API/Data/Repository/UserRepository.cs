@@ -92,7 +92,7 @@ namespace API.Data.Repository
 
         public async Task<bool> NameExistsAsync(string newName)
         {
-            return await _context.Users.AnyAsync(x => x.Name == newName.ToLower());
+            return await _context.Users.AnyAsync(x => x.Name.ToLower() == newName.ToLower());
         }
     }
 }

@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Member } from 'src/app/shared/_models/member';
+import { Member } from 'src/app/shared/models/member';
 import { FileUploader } from 'ng2-file-upload';
 import { environment } from 'src/environments/environment';
-import { UserToken } from 'src/app/shared/_models/user';
+import { UserToken } from 'src/app/shared/userToken';
 import { AccountService } from '../../account.service';
 import { take } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
-import { Photo } from 'src/app/shared/_models/photo';
+import { Photo } from 'src/app/shared/models/photo';
 import { UserService } from '../user.service';
 
 @Component({

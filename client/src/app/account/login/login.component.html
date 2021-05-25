@@ -1,19 +1,24 @@
 <div class="container">
     <div class="login mt-5">
-        <form #loginForm="ngForm" autocomplete="off" (ngSubmit)="login()">
-            <div>
-                <label>Email</label>
-                <input name="username" [(ngModel)]="model.username" class="text-input" />
-            </div>
-            <div>
-                <label>Password</label>
-                <input name="password" [(ngModel)]="model.password" class="text-input" type="password" />
-            </div>
-            <div>
-                <input type="checkbox"/>&nbsp;
+        <form [formGroup]='loginForm' (ngSubmit)=" login()">
+            <app-text-input [formControl]='loginForm.controls["username"]' [label]='"Email"' [type]='"email"'>
+            </app-text-input>
+            <app-text-input [formControl]='loginForm.controls["password"]' [type]='"password"' [label]='"Password"'>
+            </app-text-input>
+            <div class="form-group">
+                <input type="checkbox" />&nbsp;
                 <label>Remember me</label>
             </div>
-            <button type="submit" class="primary-btn">Sign In</button>
+            <div class="row" *ngIf="validationErrors.length > 0">
+                <ul class="text-danger">
+                    <li *ngFor="let error of validationErrors">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-warning btn-block">Sign In</button>
+            </div>
         </form>
         <div class="row text-center text-white-50">
             Sign in with

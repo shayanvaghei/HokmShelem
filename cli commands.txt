@@ -55,3 +55,7 @@ $ ng add ngx-ui-loader
 
 // install photo upload
 $ npm install ng2-file-upload
+
+// adding ReactiveFormModule
+in the app.module.ts import
+ReactiveFormsModule from import { ReactiveFormsModule } from '@angular/forms';

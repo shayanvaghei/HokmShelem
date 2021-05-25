@@ -46,8 +46,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="btn-group d-flex">
-                        <button class="btn btn-outline-info btn-block" routerLink="/user-profile/edit"><i
-                                class="fas fa-edit mr-2"></i> Edit profile</button>
+                        <button class="btn btn-outline-info btn-block" routerLink="/user-profile/edit"><i class="fas fa-edit"></i> Edit profile</button>
                     </div>
                 </div>
             </div>
@@ -67,7 +66,7 @@
                     <ng-container *ngIf="!photoEditMode">
                         <div class="row">
                             <div class="col-4">
-                                <button (click)="photoEditToggle()" class="btn btn-outline-info"><i class="fas fa-edit mr-2"></i> Edit photos</button>
+                                <button (click)="photoEditToggle()" class="btn btn-outline-info"><i class="far fa-edit"></i> Edit photos</button>
                             </div>
                         </div>
                         <app-photo-gallery [photos]="member.photos"></app-photo-gallery>

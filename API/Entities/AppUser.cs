@@ -10,14 +10,18 @@ namespace API.Entities
     public class AppUser
     {
         public int Id { get; set; }
+        [Required]
+        [StringLength(30)]
         public string UserName { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         [Required]
         [StringLength(15)]
         public string Name { get; set; }
+        [Required]
         public DateTime Created { get; set; } = DateTime.Now;
         public DateTime LastActive { get; set; } = DateTime.Now;
+        [Required]
         [StringLength(40)]
         public string Country { get; set; }
         public DateTime DateOfBirth { get; set; }

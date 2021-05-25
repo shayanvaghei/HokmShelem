@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
-import { Photo } from '../_models/photo';
+import { Photo } from '../../models/photo';
 
 @Component({
   selector: 'app-photo-gallery',

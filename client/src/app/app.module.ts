@@ -4,13 +4,14 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { LobbyComponent } from './game/lobby/lobby.component';
 import { ErrorInterceptor } from './core/_interceptors/error.interceptor';
 import { JwtInterceptor } from './core/_interceptors/jwt.interceptor';
 import { CoreModule } from './core/core.module';
 import { LoadingInterceptor } from './core/_interceptors/loading.interceptor';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { LoadingInterceptor } from './core/_interceptors/loading.interceptor';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    FontAwesomeModule,
+    
   ],
   // we need add our own interceptors into providers
   providers: [

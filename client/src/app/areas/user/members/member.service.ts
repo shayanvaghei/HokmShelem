@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Member } from 'src/app/shared/_models/member';
+import { Member } from 'src/app/shared/models/member';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

@@ -65,7 +65,7 @@ namespace API.Controllers
             {
                 if (await _userRepository.NameExistsAsync(userUpdateDto.Name))
                 {
-                    return BadRequest(string.Format("Error, {0} aleady exists, try other names", userUpdateDto.Name));
+                    return BadRequest(string.Format("{0} is taken, try other names", userUpdateDto.Name));
                 }
             }
 

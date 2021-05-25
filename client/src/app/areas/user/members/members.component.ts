@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Member } from 'src/app/shared/_models/member';
+import { Member } from 'src/app/shared/models/member';
 import { MemberService } from './member.service';
 
 @Component({

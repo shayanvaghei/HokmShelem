@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PlayerResults} from '../_models/playerResults';
+import { PlayerResults} from '../../models/playerResults';
 
 @Component({
   selector: 'app-member-scores',

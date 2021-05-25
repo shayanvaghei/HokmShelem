@@ -8,7 +8,6 @@ import { NotFoundPageComponent } from './errors/not-found-page/not-found-page.co
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { LoginComponent } from '../account/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { RegisterComponent } from '../account/register/register.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -19,8 +18,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     NavComponent,
     ServerErrorComponent,
     NotFoundPageComponent,
-    LoginComponent,
-    RegisterComponent,
   ],
   imports: [
     CommonModule,
@@ -37,8 +34,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     NavComponent,
     ServerErrorComponent,
     NotFoundPageComponent,
-    LoginComponent,
-    RegisterComponent,
     BsDropdownModule,
     ToastrModule,
     NgxSpinnerModule
