@@ -5,6 +5,7 @@ import { UserToken } from '../shared/userToken';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class AccountService {
   private currentUserSource = new ReplaySubject<UserToken>(1); // 1 is the size of our buffer, how many users do we want to store
   currentUser$ = this.currentUserSource.asObservable();
 
-  constructor(private http: HttpClient, private toastr: ToastrService) { }
+  constructor(private http: HttpClient, private toastr: ToastrService, private router: Router) { }
 
   login(model: any) {
     return this.http.post(this.baseUrl + 'account/login', model).pipe(
@@ -63,7 +64,7 @@ export class AccountService {
         // removing user from the list
         this.currentUserSource.next(null);
         this.toastr.success('User has been sucessully logged out!')
-
+        this.router.navigateByUrl('/'); // users will be redirected to home page after logout
       }
     }, error => {
       console.log(error);

@@ -6,6 +6,7 @@ import { MembersComponent } from './members.component';
 import { MemberRoutingModule } from './member-routing.module';
 import {TabsModule} from 'ngx-bootstrap/tabs';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     MemberRoutingModule,
     TabsModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [
     TabsModule,

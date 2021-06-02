@@ -24,7 +24,7 @@ namespace API.DTOs
         public int ShelemScore { get; set; }
         public int GamesWon { get; set; }
         public int GamesLost { get; set; }
-        public int GamesAbandoned { get; set; }
+        public int GamesLeft { get; set; }
         public int TournomenstWon { get; set; }
         public int Views { get; set; } = 0;
         public string Status { get; set; }

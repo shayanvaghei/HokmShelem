@@ -1,6 +1,14 @@
 <div class="card mb-4">
-    <h3 class="card-header text-center">{{member.name}}</h3>
-    <div class="card-img-wrapper">
+    <div class="card-header custom">
+        <div>
+            <img src="./assets/images/badges/{{member.badge | lowercase}}.png" class="badgeImage">
+        </div>
+        <div>
+            <p class="nameSize">{{member.name}}</p>
+        </div>
+
+    </div>
+    <div class="card-img-wrapper text-center">
         <img src="{{member.photoUrl || './assets/images/site/user.png'}}" alt="{{member.name}}" class="card-img-top">
         <ul class="list-inline member-icons animate text-center">
             <li class="list-inline-item">
@@ -18,11 +26,22 @@
     <div class="card-body p-1">
         <ul class="list-group list-group-flush">
             <li class="list-group-item text-center">
-                <app-country-image [countryName]="member.country" [width]="150" [height]="70"></app-country-image>
+                <div class="row">
+                    <div class="col">
+                        <app-country-image [countryName]="member.country" [width]="80" [height]="40">
+                        </app-country-image>
+                    </div>
+                </div>
             </li>
         </ul>
-    </div>
-    <div class="text-center card-footer text-muted">
-        Last active 2 days ago
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <app-card-score [label]="'Hokm'" [score]="member.hokmScore"></app-card-score>
+                <app-card-score [label]="'Shelem'" [score]="member.shelemScore"></app-card-score>
+                <app-card-score [label]="'Wins'" [score]="member.gamesWon"></app-card-score>
+                <app-card-score [label]="'Loses'" [score]="member.gamesLost"></app-card-score>
+                <app-card-score [label]="'Quits'" [score]="member.gamesLeft"></app-card-score>
+            </li>
+        </ul>
     </div>
 </div>

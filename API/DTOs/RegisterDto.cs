@@ -19,8 +19,6 @@ namespace API.DTOs
         [StringLength(40)]
         public string Country { get; set; }
         [Required]
-        public DateTime DateOfBirth { get; set; }
-        [Required]
         [StringLength(20, MinimumLength = 6, ErrorMessage = "Password must be at least {2}, and maximum {1} characters")]
         public string Password { get; set; }
     }

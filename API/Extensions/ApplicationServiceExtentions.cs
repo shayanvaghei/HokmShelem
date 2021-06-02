@@ -19,6 +19,8 @@ namespace API.Extentions
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPhotoService, PhotoService>();
+            // adding LogUserActivity into our service for updating last active of the user
+            services.AddScoped<LogUserActivity>();
             // we need to make the automapper as dependency injection so we add the services here
             // inside the parameter goes and find the profile that we have created
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);

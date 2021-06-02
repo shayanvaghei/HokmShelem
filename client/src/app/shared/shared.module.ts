@@ -10,6 +10,9 @@ import { TextInputComponent } from './components/forms-input/text-input/text-inp
 import { ReactiveFormsModule } from '@angular/forms';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import { DateInputComponent } from './components/forms-input/date-input/date-input.component';
+import { CardScoreComponent } from './components/card-score/card-score.component';
+import {PaginationModule} from 'ngx-bootstrap/pagination';
+import {TimeagoModule} from 'ngx-timeago';
 
 @NgModule({
   declarations: [
@@ -19,13 +22,16 @@ import { DateInputComponent } from './components/forms-input/date-input/date-inp
     HeaderNameComponent,
     PhotoGalleryComponent,
     TextInputComponent,
-    DateInputComponent
+    DateInputComponent,
+    CardScoreComponent
   ],
   imports: [
     CommonModule,
     NgxGalleryModule,
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
+    PaginationModule.forRoot(),
+    TimeagoModule.forRoot()
   ],
   exports: [
     MemberScoresComponent,
@@ -36,7 +42,10 @@ import { DateInputComponent } from './components/forms-input/date-input/date-inp
     NgxGalleryModule,
     TextInputComponent,
     BsDatepickerModule,
-    DateInputComponent
+    DateInputComponent,
+    CardScoreComponent,
+    PaginationModule,
+    TimeagoModule
   ]
 })
 export class SharedModule { }

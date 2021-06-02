@@ -1,3 +1,9 @@
+.card-img-wrapper img {
+    transform: scale(1.0, 1.0);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
 .card-img-wrapper:hover img {
     transform: scale(1.2, 1.2);
     transition-duration: 500ms;
@@ -5,10 +11,12 @@
     opacity: 0.7;
 }
 
-.card-img-wrapper img {
-    transform: scale(1.0, 1.0);
-    transition-duration: 500ms;
-    transition-timing-function: ease-out;
+
+
+.custom {
+    display: grid;
+    grid-template-columns: 20% 90%;
+    justify-items: start;
 }
 
 .card-img-wrapper {
@@ -35,3 +43,28 @@
     transition: all 0.3s ease-in-out;
 }
 
+.badgeImage {
+    width: 30px; 
+    height: 30px;
+}
+
+.nameSize {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .card-footer, .card-header {
+        padding: 5px 5px;
+    }
+
+    .badgeImage {
+        width: 25px; 
+        height: 25px;
+    }
+
+    .nameSize {
+        font-size: 1rem;
+        font-weight:normal;
+    }
+}

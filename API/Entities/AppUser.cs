@@ -32,9 +32,8 @@ namespace API.Entities
         public int ShelemScore { get; set; } = 0;
         public int GamesWon { get; set; } = 0;
         public int GamesLost { get; set; } = 0;
-        public int GamesAbandoned { get; set; } = 0;
+        public int GamesLeft { get; set; } = 0;
         public int TournomenstWon { get; set; } = 0;
-        public int Views { get; set; } = 0;
         public string Status { get; set; } = SD.UserStatus_Offline;
         public ICollection<Photo> Photos { get; set; }
     }

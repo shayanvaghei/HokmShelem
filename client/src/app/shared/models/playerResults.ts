@@ -4,6 +4,6 @@ export interface PlayerResults {
     shelemScore: number;
     gamesWon: number;
     gamesLost: number;
-    gamesAbandoned: number;
+    gamesLeft: number;
     tournomenstWon: number;
 }

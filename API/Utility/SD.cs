@@ -50,6 +50,13 @@ namespace API.Utility
         public const string BadgeGold = "gold";
 
 
+        public const string OrderByHokmScore = "orderByHokmScore";
+        public const string OrderByShelemScore = "orderByShelemScore";
+        public const string OrderByWins = "orderByWins";
+        public const string OrderByLoses = "orderByLoses";
+        public const string OrderByLefts = "orderByQuits";
+
+
         public static List<string> GetCountriesName()
         {
             return new List<string>() {
@@ -196,4 +203,6 @@ namespace API.Utility
                                         "Zimbabwe", };
         }
     }
+
+   
 }

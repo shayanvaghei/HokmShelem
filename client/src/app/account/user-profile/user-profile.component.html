@@ -24,7 +24,7 @@
                             <strong class="text-muted">Member since:</strong>
                         </div>
                         <div class="col-6">
-                            {{member.created}}
+                            {{member.created | date: 'dd MMM yyyy'}}
                         </div>
                     </div>
                     <div class="row mt-2">
@@ -32,7 +32,7 @@
                             <strong class="text-muted">Last Active:</strong>
                         </div>
                         <div class="col-6">
-                            {{member.lastActive}}
+                            {{member.lastActive | timeago}}
                         </div>
                     </div>
                     <div class="row mt-2 mb-2">

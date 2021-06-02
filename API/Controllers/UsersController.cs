@@ -3,6 +3,7 @@ using API.Data.Repository.interfaces;
 using API.DTOs;
 using API.Entities;
 using API.Extensions;
+using API.Helpers;
 using API.Services.IServices;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -23,18 +24,29 @@ namespace API.Controllers
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly IPhotoService _photoService;
+        private readonly StoreContext _context;
 
-        public UsersController(IUserRepository userRepository, IMapper mapper, IPhotoService photoService)
+        public UsersController(IUserRepository userRepository, IMapper mapper, IPhotoService photoService, StoreContext context)
         {
             _userRepository = userRepository;
             _mapper = mapper;
             _photoService = photoService;
+            _context = context;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
+        // [FromQuery] this means that we are taking the parameters from the query string
+        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery] UserParams userParams)
         {
-            var users = await _userRepository.GetMembersAsyc();
+            //var userss = await _context.Users.Include(x => x.Photos).ContainsAsync(u => u.n)
+
+            // now our users is of type PagedList of MemberDto
+            var users = await _userRepository.GetMembersAsyc(userParams);
+
+            // we always have access to Http Response inside our controller
+            // we are calling our static method
+            Response.AddPaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
+
             return Ok(users);
         }
         [HttpGet("{username}", Name = "GetUser")]

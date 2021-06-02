@@ -1,14 +1,31 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { IBadges, ICountry, IOrderBy, OrderByLists} from './models/user.Params';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
   
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  baseUrl = environment.apiUrl;
+
+  getBadges() {
+    return this.http.get<IBadges[]>(this.baseUrl + 'general/getBadges');
+  }
+
+  getCountriesApi() {
+    return this.http.get<ICountry[]>(this.baseUrl + 'general/getCountries');
+  }
+
+  getOrderByList() {
+    const orderByLists = of(OrderByLists);
+    return orderByLists;
+  }
 
   getCountries() {
-
     let countries: Array<string>;
     countries = [
       "--Select your country--",

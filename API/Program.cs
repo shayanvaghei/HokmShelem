@@ -1,12 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.Data.SeedDataBase;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -15,6 +12,7 @@ namespace API
 {
     public class Program
     {
+       
         // everything here happens before the application is getting started
         // when we are in the main method, we are outside of our middleware
         // so we don't have access to any of the exception handler here

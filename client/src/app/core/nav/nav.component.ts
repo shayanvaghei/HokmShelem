@@ -24,6 +24,6 @@ export class NavComponent implements OnInit {
 
   logout(username: string) {
     this.accountService.logout(username);
-    this.router.navigateByUrl('/'); // users will be redirected to home page after logout
+    
   }
 }

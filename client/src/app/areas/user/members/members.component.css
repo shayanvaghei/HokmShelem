@@ -1,0 +1,10 @@
+.list-group:hover {
+    cursor: pointer;
+}
+
+
+@media (max-width: 1200px) {
+    .wrapper {
+        max-width: 95%;
+    }
+}

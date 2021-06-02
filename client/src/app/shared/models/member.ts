@@ -15,7 +15,7 @@ export interface Member {
     shelemScore: number;
     gamesWon: number;
     gamesLost: number;
-    gamesAbandoned: number;
+    gamesLeft: number;
     tournomenstWon: number;
     views: number;
     status: string;

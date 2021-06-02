@@ -1,5 +1,6 @@
 ﻿using API.DTOs;
 using API.Entities;
+using API.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,10 @@ namespace API.Data.Repository.interfaces
 
         // for optimization we create the following two methods
         // instead of returning AppUser we are returning MemberDto
-        Task<IEnumerable<MemberDto>> GetMembersAsyc();
+        // now instead of returning IEnumerable we return PagedList which is derived from
+        // List of type T
+        // this method now takes userParams
+        Task<PagedList<MemberDto>> GetMembersAsyc(UserParams userParams);
         Task<MemberDto> GetMemberAsync(string username);
         Task<UserUpdateDto> GetUserForUpdate(string username);
 

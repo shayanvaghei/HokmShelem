@@ -1,0 +1,49 @@
+
+https://www.json-generator.com/
+
+[
+  '{{repeat(50)}}',
+  {
+    UserName: '{{firstName("female")}}',
+    Name: function(){ return this.UserName; },
+    Created: '{{date(new Date(2019, 0, 1), new Date(2020,5,30), "YYYY-MM-dd")}}',
+    LastActive: '{{date(new Date(2020, 4, 1), new Date(2020,5,30), "YYYY-MM-dd")}}',
+    Country: function (tags) {
+      var countries = ['Canada', 'Iran', 'United-States-of-America', 'Spain', 'Turkey',
+                      'New-Zealand', 'Mexico', 'Germany', 'France', 'Australia', 'Brazil'];
+      return countries[tags.integer(0, countries.length - 1)];
+    },
+    DateOfBirth: '{{date(new Date(1950,0,1), new Date(1999, 11, 31), "YYYY-MM-dd")}}',
+    AboutMe: '{{lorem(1, "paragraphs")}}',
+    Badge: function (tags) {
+      var badges = ['pink', 'purple', 'red', 'green', 'brown','blue','grey','orange', 'diamond', 'gold'];
+      return badges[tags.integer(0, badges.length - 1)];
+    },
+    HokmScore: '{{integer(0, 6000)}}',
+    ShelemScore: '{{integer(0, 5000000)}}',
+    GamesWon: '{{integer(0, 10000)}}',
+    GamesLost: '{{integer(0, 10000)}}',
+    GamesLeft: '{{integer(0, 5000)}}',
+    TournomenstWon: '{{integer(0, 500)}}',
+    Photos: [
+        {
+          Url: function(num) {
+          return 'https://randomuser.me/api/portraits/women/' + num.integer(1,99) + '.jpg';
+        },
+        IsMain: true
+      },
+      {
+          Url: function(num) {
+          return 'https://randomuser.me/api/portraits/women/' + num.integer(1,99) + '.jpg';
+        },
+        IsMain: false
+      },
+      {
+          Url: function(num) {
+          return 'https://randomuser.me/api/portraits/women/' + num.integer(1,99) + '.jpg';
+        },
+        IsMain: false
+      }
+    ]
+  }
+]

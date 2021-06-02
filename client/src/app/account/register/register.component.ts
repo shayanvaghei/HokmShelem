@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), Validators.pattern("^[A-Za-z0-9_-]*$")]],
       username: ['', [Validators.required, Validators.maxLength(30), Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       country: ['', [Validators.required, Validators.maxLength(40)]],
-      dateOfBirth: [new Date('Jan 01, 2000, 21:43:11 UTC'), Validators.required],
+      //dateOfBirth: [new Date('Jan 01, 2000, 21:43:11 UTC'), Validators.required],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
       confrimPassword: ['', [Validators.required, this.matchPasswords('password')]]
     })

@@ -1,23 +1,57 @@
-<div class="container">
+<div class="wrapper">
     <div class="row">
-        <section class="col-12">
-            <div class="d-flex justify-content-between align-items-center pb-2">
-                <header>
-                    <span>Showing <strong>10</strong> of <strong>16</strong> Results</span>
-                </header>
-                <div class="form-inline mt-2">
-                    <input class="form-control mr-2" style="width: 300px;" placeholder="Search" type="text">
-                    <button class="btn btn-outline-primary my-2">Search</button>
-                    <button class="btn btn-outline-success ml-2 my-2">Reset</button>
-                </div>
-            </div>
-           
-            <div class="row-cols-lg-4 row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div *ngFor="let member of members$ | async" class="col">
-                    <app-member-card [member]="member"></app-member-card>
-                </div>
-            </div>
+        <section class="col-lg-2 col-sm-12">
+            <div class="container">
 
+                <h5 class="text-warning ml-3 mt-4 mb-3">Search by badge</h5>
+                <select name="badge" class="form-control mb-4" (change)="onBadgeSelected($event.target.value)">
+                    <option *ngFor="let badge of badges" [value]="badge.name"  [selected]="userParams.badge === badge.name">
+                        {{badge.name | titlecase}}
+                    </option>
+                </select>
+                <h5 class="text-warning ml-3 mt-4 mb-3">Search by Country</h5>
+                <select id="countryList" name="country" class="form-control mb-4" (change)="onCountrySelected($event.target.value)">
+                    <option *ngFor="let country of countries" [value]="country.name" [selected]="userParams.country === country.name">
+                        {{country.name | titlecase}}
+                    </option>
+                </select>
+                <h5 class="text-warning ml-3">Search by</h5>
+                <ul class="list-group my-3">
+                    <li class="list-group-item" *ngFor="let orderBy of orderByList"
+                        [class.active]="orderBy.value === this.userParams.orderBy" [value]="orderBy.value"
+                        (click)="orderBySelect(orderBy.value)">
+                        {{orderBy.display}}
+                    </li>
+                </ul>
+
+            </div>
         </section>
-     </div>
+        <section class="col-lg-10 col-sm-12">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center pb-2">
+                    <header>
+                        <span>Showing <strong>{{pagination?.itemsPerPage}}</strong> of
+                            <strong>{{pagination?.totalItems}}</strong> Results</span>
+                    </header>
+                    <div class="form-inline mt-2">
+                        <input (keyup.enter)="onSearch()" class="form-control mr-2" #search style="width: 300px;" placeholder="Search" type="text">
+                        <button (click)="onSearch()" class="btn btn-outline-primary my-2">Search</button>
+                        <button (click)="onReset()" class="btn btn-outline-success ml-2 my-2">Reset</button>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div *ngFor="let member of members" class="col-lg-3 col-md-4 col-6">
+                        <app-member-card [member]="member"></app-member-card>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center" *ngIf="pagination">
+                    <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems"
+                        [itemsPerPage]="pagination.itemsPerPage" [(ngModel)]="pagination.currentPage"
+                        (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;"
+                        firstText="&laquo;" lastText="&raquo;">
+                    </pagination>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
